@@ -1,0 +1,303 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #0b0b0f;
+    color: white;
+}
+
+.top-bar {
+    width: 100%;
+    min-height: 100vh;
+    background: #0b0b0f;
+    padding: 40px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Logo */
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+h1 span {
+    color: #007bff;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.cabecalho h2 {
+    font-size: 24px;
+}
+
+/* Botão voltar */
+
+.voltar {
+    color: #b3b3b3;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #363653;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.voltar:hover {
+    color: white;
+    border-color: #007bff;
+}
+
+/* Formulário */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Blocos */
+
+.bloco {
+    background: #15151c;
+    border: 1px solid #1f1f2e;
+    border-left: 4px solid #007bff;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.bloco h3 {
+    color: #007bff;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.descricao {
+    color: #9c9ca8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Campos */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+label {
+    color: #c7c7c7;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+
+    background: #282842;
+    color: white;
+
+    border: 1px solid #363653;
+    border-radius: 7px;
+
+    font-size: 15px;
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input::placeholder {
+    color: #858595;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+/* =========================================
+   PONTOS DO CADASTRO DE LINHA
+   ========================================= */
+
+.ponto {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+
+    gap: 15px;
+    align-items: end;
+
+    background: #1a1a23;
+
+    border: 1px solid #292936;
+    border-radius: 8px;
+
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.ponto .form-group {
+    margin-bottom: 0;
+}
+
+/* =========================================
+   LINHAS DO CADASTRO DE PONTO
+   ========================================= */
+
+.linha {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+
+    gap: 15px;
+    align-items: end;
+
+    background: #1a1a23;
+
+    border: 1px solid #292936;
+    border-radius: 8px;
+
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.linha .form-group {
+    margin-bottom: 0;
+}
+
+/* Botão adicionar */
+
+.btn-adicionar {
+    height: 42px;
+
+    padding: 0 20px;
+
+    background: transparent;
+    color: #007bff;
+
+    border: 1px solid #007bff;
+    border-radius: 7px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-adicionar:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Botão remover */
+
+.btn-remover {
+    height: 42px;
+
+    padding: 0 15px;
+
+    background: #292936;
+    color: #ff6b6b;
+
+    border: 1px solid #3a3a48;
+    border-radius: 7px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-remover:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* Botão cadastrar */
+
+.btn-cadastrar {
+    width: 100%;
+    height: 48px;
+
+    background: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-cadastrar:hover {
+    background: #0069d9;
+}
+
+.btn-cadastrar:active {
+    transform: scale(0.99);
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .top-bar {
+        padding: 25px 15px;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .ponto,
+    .linha {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-remover {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .cabecalho h2 {
+        font-size: 21px;
+    }
+
+    .bloco {
+        padding: 20px 15px;
+    }
+}
