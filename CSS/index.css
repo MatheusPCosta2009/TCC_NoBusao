@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0b0b0f;
+    color: white;
+}
+
+.top-bar {
+    width: 100%;
+    background: #15151c;
+    padding: 25px 40px;
+    border-bottom: 1px solid #1f1f2e;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h1 span {
+    color: #007bff;
+}
+
+.area-admin {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.bloco-rota {
+    flex: 1;
+    min-width: 300px;
+    background: #15151c;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #1f1f2e;
+    border-left: 4px solid #007bff;
+}
+
+.bloco-rota h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    color: #b3b3b3;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    background: #282842;
+    color: white;
+    border: 1px solid #282842;
+    border-radius: 6px;
+}
+
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    height: 45px;
+    padding: 0 30px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5893ff;
+}
+
+.btn-calcular {
+    width: 100%;
+}
+
+.btn-admin {
+    background: #007bff;
+    display: inline-block;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-admin:hover {
+    background: #5893ff;
+}
+
+.resultado {
+    width: 100%;
+    margin-top: 30px;
+    background: #15151c;
+    padding: 20px;
+    border-left: 4px solid #007bff;
+    border-radius: 6px;
+}
+
+@media (max-width: 700px) {
+    .bloco-rota {
+        min-width: 100%;
+    }
+}
