@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/linha.css">
+
+    <title>NoBusão - Cadastro de Linha</title>
+
+</head>
+
+<body>
+
+    <div class="top-bar">
+
+        <div class="container">
+
+            <h1>
+                No<span>Busão</span>
+            </h1>
+
+            <div class="cabecalho">
+
+                <h2>Cadastro de Linha</h2>
+
+                <a href="admin.html" class="voltar">
+                    Voltar
+                </a>
+
+            </div>
+
+
+            <form action="salvar_linha.php" method="POST">
+
+
+                <!-- DADOS DA LINHA -->
+
+                <div class="bloco">
+
+                    <h3>Dados da linha</h3>
+
+                    <div class="form-group">
+
+                        <label for="nome">
+                            Nome da linha:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Ex: Linha 101"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="cor">
+                            Cor da linha:
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cor"
+                            name="cor"
+                            placeholder="Ex: Azul"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PONTOS DA LINHA -->
+
+                <div class="bloco">
+
+                    <h3>Pontos da linha</h3>
+
+                    <p class="descricao">
+                        Selecione os pontos que fazem parte da linha,
+                        a ordem e o sentido do trajeto.
+                    </p>
+
+
+                    <div class="ponto">
+
+                        <div class="form-group">
+
+                            <label>
+                                Ponto:
+                            </label>
+
+                            <select name="pontos[]" > 
+
+                                <option value="">
+                                    Selecione um ponto
+                                </option>
+
+                                <option value="1">
+                                    Centro
+                                </option>
+
+                                <option value="2">
+                                    Mercado
+                                </option>
+
+                                <option value="3">
+                                    Shopping
+                                </option>
+
+                                <option value="4">
+                                    Rodoviária
+                                </option>
+
+                                <option value="5">
+                                    Estádio
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Ordem:
+                            </label>
+
+                            <input
+                                type="number"
+                                name="ordem[]"
+                                min="1"
+                                placeholder="1"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Sentido:
+                            </label>
+
+                            <select name="sentido[]" >
+
+                                <option value="">
+                                    Selecione
+                                </option>
+
+                                <option value="IDA">
+                                    IDA
+                                </option>
+
+                                <option value="VOLTA">
+                                    VOLTA
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn-adicionar"
+                        onclick="adicionarPonto()"
+                    >
+                        + Adicionar ponto
+                    </button>
+
+                    <div id="lista-pontos"></div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-cadastrar"
+                >
+                    Cadastrar Linha
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function adicionarPonto() {
+
+            const lista = document.getElementById("lista-pontos");
+
+            const ponto = document.createElement("div");
+
+            ponto.classList.add("ponto");
+
+            ponto.innerHTML = `
+
+                <div class="form-group">
+
+                    <label>
+                        Ponto:
+                    </label>
+
+                    <select name="pontos[]">
+
+                        <option value="">
+                            Selecione um ponto
+                        </option>
+
+                        <option value="1">
+                            Centro
+                        </option>
+
+                        <option value="2">
+                            Mercado
+                        </option>
+
+                        <option value="3">
+                            Shopping
+                        </option>
+
+                        <option value="4">
+                            Rodoviária
+                        </option>
+
+                        <option value="5">
+                            Estádio
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Ordem:
+                    </label>
+
+                    <input
+                        type="number"
+                        name="ordem[]"
+                        min="1"
+                        placeholder="1"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Sentido:
+                    </label>
+
+                    <select name="sentido[]">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="IDA">
+                            IDA
+                        </option>
+
+                        <option value="VOLTA">
+                            VOLTA
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn-remover"
+                    onclick="this.parentElement.remove()"
+                >
+                    Remover
+                </button>
+
+            `;
+
+            lista.appendChild(ponto);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
