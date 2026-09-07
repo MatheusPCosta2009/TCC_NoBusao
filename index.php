@@ -28,7 +28,6 @@ $bairro_destino = $conexao->query("
     <link rel="stylesheet" href="CSS/index.css">
 
     <title>NoBusão - Consulta</title>
-    
 
 </head>
 
@@ -36,7 +35,10 @@ $bairro_destino = $conexao->query("
 
 <div class="container">
 
-    <!-- CABEÇALHO -->
+
+    <!-- =================================================
+         CABEÇALHO
+    ================================================== -->
 
     <div class="cabecalho">
 
@@ -51,12 +53,16 @@ $bairro_destino = $conexao->query("
     </div>
 
 
-    <!-- ORIGEM E DESTINO -->
+    <!-- =================================================
+         ORIGEM E DESTINO
+    ================================================== -->
 
     <div class="rota">
 
 
-        <!-- ORIGEM -->
+        <!-- =================================================
+             ORIGEM
+        ================================================== -->
 
         <div class="bloco-rota">
 
@@ -108,7 +114,9 @@ $bairro_destino = $conexao->query("
         </div>
 
 
-        <!-- DESTINO -->
+        <!-- =================================================
+             DESTINO
+        ================================================== -->
 
         <div class="bloco-rota">
 
@@ -162,16 +170,24 @@ $bairro_destino = $conexao->query("
     </div>
 
 
-    <!-- BOTÃO -->
+    <!-- =================================================
+         BOTÃO
+    ================================================== -->
 
-    <button type="button" onclick="consultar()">
+    <button
+        type="button"
+        onclick="consultar()"
+    >
         Consultar ônibus
     </button>
 
 
-    <!-- RESULTADO -->
+    <!-- =================================================
+         RESULTADO
+    ================================================== -->
 
     <div id="resultado"></div>
+
 
 </div>
 
@@ -186,7 +202,9 @@ CARREGAR PONTOS DO BAIRRO
 
 function carregarPontos(idBairro, idSelect) {
 
-    const select = document.getElementById(idSelect);
+    const select =
+        document.getElementById(idSelect);
+
 
     select.innerHTML =
         '<option value="">Carregando...</option>';
@@ -209,7 +227,11 @@ function carregarPontos(idBairro, idSelect) {
     .then(response => {
 
         if (!response.ok) {
-            throw new Error("Erro na requisição");
+
+            throw new Error(
+                "Erro na requisição"
+            );
+
         }
 
         return response.json();
@@ -222,7 +244,10 @@ function carregarPontos(idBairro, idSelect) {
             '<option value="">Selecione o ponto</option>';
 
 
-        if (!Array.isArray(dados) || dados.length === 0) {
+        if (
+            !Array.isArray(dados) ||
+            dados.length === 0
+        ) {
 
             select.innerHTML =
                 '<option value="">Nenhum ponto encontrado</option>';
@@ -236,11 +261,14 @@ function carregarPontos(idBairro, idSelect) {
             const option =
                 document.createElement("option");
 
+
             option.value =
                 ponto.id_ponto;
 
+
             option.textContent =
                 ponto.nome;
+
 
             select.appendChild(option);
 
@@ -248,7 +276,9 @@ function carregarPontos(idBairro, idSelect) {
 
     })
 
-    .catch(() => {
+    .catch(erro => {
+
+        console.error(erro);
 
         select.innerHTML =
             '<option value="">Erro ao carregar pontos</option>';
@@ -266,14 +296,17 @@ BAIRRO DE ORIGEM
 
 document
     .getElementById("bairro_origem")
-    .addEventListener("change", function() {
+    .addEventListener(
+        "change",
+        function() {
 
-        carregarPontos(
-            this.value,
-            "ponto_origem"
-        );
+            carregarPontos(
+                this.value,
+                "ponto_origem"
+            );
 
-    });
+        }
+    );
 
 
 /*
@@ -284,14 +317,17 @@ BAIRRO DE DESTINO
 
 document
     .getElementById("bairro_destino")
-    .addEventListener("change", function() {
+    .addEventListener(
+        "change",
+        function() {
 
-        carregarPontos(
-            this.value,
-            "ponto_destino"
-        );
+            carregarPontos(
+                this.value,
+                "ponto_destino"
+            );
 
-    });
+        }
+    );
 
 
 /*
@@ -303,13 +339,21 @@ CONSULTAR LINHAS
 function consultar() {
 
     const origem =
-        document.getElementById("ponto_origem").value;
+        document.getElementById(
+            "ponto_origem"
+        ).value;
+
 
     const destino =
-        document.getElementById("ponto_destino").value;
+        document.getElementById(
+            "ponto_destino"
+        ).value;
+
 
     const resultado =
-        document.getElementById("resultado");
+        document.getElementById(
+            "resultado"
+        );
 
 
     /*
@@ -318,10 +362,21 @@ function consultar() {
     -----------------------------------------------------
     */
 
-    if (origem === "" || destino === "") {
+    if (
+        origem === "" ||
+        destino === ""
+    ) {
 
-        resultado.innerHTML =
-            "<p>Selecione o ponto de origem e o ponto de destino.</p>";
+        resultado.innerHTML = `
+
+            <div class="mensagem">
+
+                Selecione o ponto de origem
+                e o ponto de destino.
+
+            </div>
+
+        `;
 
         return;
     }
@@ -335,8 +390,16 @@ function consultar() {
 
     if (origem === destino) {
 
-        resultado.innerHTML =
-            "<p>O ponto de origem e o ponto de destino são iguais.</p>";
+        resultado.innerHTML = `
+
+            <div class="mensagem">
+
+                O ponto de origem e o ponto
+                de destino são iguais.
+
+            </div>
+
+        `;
 
         return;
     }
@@ -348,13 +411,20 @@ function consultar() {
     -----------------------------------------------------
     */
 
-    resultado.innerHTML =
-        "<p>Consultando linhas de ônibus...</p>";
+    resultado.innerHTML = `
+
+        <div class="mensagem">
+
+            Consultando linhas de ônibus...
+
+        </div>
+
+    `;
 
 
     /*
     -----------------------------------------------------
-    CONSULTA
+    CONSULTA AO PHP
     -----------------------------------------------------
     */
 
@@ -369,7 +439,11 @@ function consultar() {
     .then(response => {
 
         if (!response.ok) {
-            throw new Error("Erro na requisição");
+
+            throw new Error(
+                "Erro na requisição"
+            );
+
         }
 
         return response.json();
@@ -380,14 +454,25 @@ function consultar() {
 
         /*
         -------------------------------------------------
-        NENHUMA LINHA
+        NENHUMA ROTA
         -------------------------------------------------
         */
 
-        if (!Array.isArray(dados) || dados.length === 0) {
+        if (
+            !Array.isArray(dados) ||
+            dados.length === 0
+        ) {
 
-            resultado.innerHTML =
-                "<p>Nenhuma linha encontrada para esse trajeto.</p>";
+            resultado.innerHTML = `
+
+                <div class="mensagem">
+
+                    Nenhuma linha encontrada
+                    para esse trajeto.
+
+                </div>
+
+            `;
 
             return;
         }
@@ -402,36 +487,270 @@ function consultar() {
         let html = "";
 
 
-        dados.forEach(linha => {
+        dados.forEach(rota => {
 
-            html += `
 
-                <div class="card-linha">
+            /*
+            =============================================
+            LINHA DIRETA
+            =============================================
+            */
 
-                    <h2>
-                        Linha ${linha.numero}
-                    </h2>
+            if (
+                rota.tipo === "direta"
+            ) {
 
-                    <p>
-                        ${linha.nome}
-                    </p>
+                html += `
 
-                    <p class="titulo-horarios">
-                        Horários
-                    </p>
+                    <div class="card-linha">
 
-                    <p>
-                        ${linha.horarios ?? "Horários não informados."}
-                    </p>
 
-                </div>
+                        <div class="linha-topo">
 
-            `;
+                            <div class="icone-onibus">
+                                🚌
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    Linha ${rota.numero}
+                                </h2>
+
+                                <p>
+                                    ${rota.nome}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="trajeto">
+
+
+                            <div class="trajeto-item">
+
+                                <span class="bolinha"></span>
+
+                                <span>
+                                    Ponto de origem
+                                </span>
+
+                            </div>
+
+
+                            <div class="linha-vertical"></div>
+
+
+                            <div class="trajeto-item">
+
+                                <span class="bolinha destino"></span>
+
+                                <span>
+                                    Ponto de destino
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="horarios">
+
+                            <strong>
+                                Horários
+                            </strong>
+
+                            <p>
+                                ${
+                                    rota.horarios ||
+                                    "Horários não informados."
+                                }
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                `;
+
+            }
+
+
+            /*
+            =============================================
+            TRAJETO COM TRANSFERÊNCIA
+            =============================================
+            */
+
+            if (
+                rota.tipo === "transferencia"
+            ) {
+
+                html += `
+
+                    <div class="card-linha transferencia">
+
+
+                        <!-- PRIMEIRA LINHA -->
+
+                        <div class="etapa">
+
+                            <div class="linha-topo">
+
+                                <div class="icone-onibus">
+                                    🚌
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        Linha ${rota.linha1.numero}
+                                    </h2>
+
+                                    <p>
+                                        ${rota.linha1.nome}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <p class="instrucao">
+
+                                Pegue esta linha no
+                                <strong>
+                                    ponto de origem
+                                </strong>.
+
+                            </p>
+
+
+                            <div class="horarios">
+
+                                <strong>
+                                    Horários
+                                </strong>
+
+                                <p>
+                                    ${
+                                        rota.linha1.horarios ||
+                                        "Horários não informados."
+                                    }
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PONTO DE INTEGRAÇÃO -->
+
+                        <div class="integracao">
+
+                            <div class="icone-integracao">
+                                🔄
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Ponto de integração
+                                </strong>
+
+                                <p>
+                                    Desça no ponto:
+                                </p>
+
+                                <h3>
+                                    ${rota.integracao.nome}
+                                </h3>
+
+                                <p class="pegar">
+
+                                    Nesse mesmo ponto,
+                                    pegue a próxima linha.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SEGUNDA LINHA -->
+
+                        <div class="etapa">
+
+                            <div class="linha-topo">
+
+                                <div class="icone-onibus">
+                                    🚌
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        Linha ${rota.linha2.numero}
+                                    </h2>
+
+                                    <p>
+                                        ${rota.linha2.nome}
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <p class="instrucao">
+
+                                Embarque no
+                                <strong>
+                                    ${rota.integracao.nome}
+                                </strong>
+
+                                e siga até o
+                                <strong>
+                                    ponto de destino
+                                </strong>.
+
+                            </p>
+
+
+                            <div class="horarios">
+
+                                <strong>
+                                    Horários
+                                </strong>
+
+                                <p>
+                                    ${
+                                        rota.linha2.horarios ||
+                                        "Horários não informados."
+                                    }
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                `;
+
+            }
 
         });
 
 
-        resultado.innerHTML = html;
+        resultado.innerHTML =
+            html;
 
     })
 
@@ -439,8 +758,15 @@ function consultar() {
 
         console.error(erro);
 
-        resultado.innerHTML =
-            "<p>Erro ao realizar a consulta.</p>";
+        resultado.innerHTML = `
+
+            <div class="mensagem erro">
+
+                Erro ao realizar a consulta.
+
+            </div>
+
+        `;
 
     });
 
