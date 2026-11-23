@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NoBusão | Resultado da viagem</title>
+
+    <link rel="stylesheet" href="../CSS/resultado.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho">
+
+        <div class="cabecalho-conteudo">
+
+            <a href="../index.html" class="logo">
+                <span>No<span class="logo-destaque">Busão</span></span>
+            </a>
+
+            <span class="identificacao">RESULTADO DA VIAGEM</span>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="container">
+
+        <section class="apresentacao">
+
+            <span class="etiqueta">MOBILIDADE URBANA</span>
+
+            <h1>
+                Sua rota até o
+                <span>destino.</span>
+            </h1>
+
+            <p>
+                Confira os pontos de partida e chegada
+                e as linhas necessárias para realizar sua viagem.
+            </p>
+
+        </section>
+
+
+        <!-- CARTÃO DO RESULTADO -->
+
+        <section class="cartao-resultado">
+
+            <div class="cartao-cabecalho">
+
+                <div>
+
+                    <h2>Resumo da viagem</h2>
+
+                    <p>
+                        Confira as informações do seu percurso.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORIGEM E DESTINO -->
+
+            <div class="rota">
+
+                <div class="bloco-rota">
+
+                    <div class="titulo-rota">
+
+                        <span class="marcador origem"></span>
+
+                        <h3>Local de partida</h3>
+
+                    </div>
+
+                    <p id="nome-origem" class="nome-ponto">
+                        Carregando...
+                    </p>
+
+                </div>
+
+
+                <div class="bloco-rota">
+
+                    <div class="titulo-rota">
+
+                        <span class="marcador destino"></span>
+
+                        <h3>Local de chegada</h3>
+
+                    </div>
+
+                    <p id="nome-destino" class="nome-ponto">
+                        Carregando...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMAÇÕES DAS LINHAS -->
+
+            <section class="informacoes-linhas">
+
+                <div class="secao-cabecalho">
+
+                    <h2 id="titulo-linhas">
+                        Linhas necessárias
+                    </h2>
+
+                </div>
+
+
+                <!-- PRIMEIRA LINHA -->
+
+                <div id="linha-1" class="linha-card">
+
+                    <div class="linha-card-cabecalho">
+
+                        <span class="numero-etapa">01</span>
+
+                        <h3>Primeira linha</h3>
+
+                    </div>
+
+                    <div class="dados-linha">
+
+                        <div class="dado">
+
+                            <span>Número da linha</span>
+
+                            <strong id="numero-linha-1"></strong>
+
+                        </div>
+
+                        <div class="dado">
+
+                            <span>Cor da linha</span>
+
+                            <strong id="cor-linha-1"></strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INTEGRAÇÃO -->
+
+                <div id="integracao" class="integracao">
+
+                    <div class="integracao-icone">
+                        ↳
+                    </div>
+
+                    <div>
+
+                        <span class="integracao-titulo">
+                            Ponto de integração
+                        </span>
+
+                        <p id="nome-integracao"></p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEGUNDA LINHA -->
+
+                <div id="linha-2" class="linha-card">
+
+                    <div class="linha-card-cabecalho">
+
+                        <span class="numero-etapa">02</span>
+
+                        <h3>Segunda linha</h3>
+
+                    </div>
+
+                    <div class="dados-linha">
+
+                        <div class="dado">
+
+                            <span>Número da linha</span>
+
+                            <strong id="numero-linha-2"></strong>
+
+                        </div>
+
+                        <div class="dado">
+
+                            <span>Cor da linha</span>
+
+                            <strong id="cor-linha-2"></strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- BOTÃO VOLTAR -->
+
+        <div class="voltar-inicio">
+
+            <a href="../index.html" class="botao-voltar">
+                ← Voltar ao início
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+
+        <p>NoBusão</p>
+
+        <span>
+            Mobilidade urbana e informação.
+        </span>
+
+    </footer>
+
+
+    <script src="../JS/resultado.js"></script>
+
+</body>
+
+</html>

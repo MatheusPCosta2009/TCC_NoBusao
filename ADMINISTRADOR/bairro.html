@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Bairros | NoBusão</title>
+
+    <link rel="stylesheet" href="../CSS/bairro.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="cabecalho-conteudo">
+
+            <a href="../index.html" class="logo">
+                No<span>Busão</span>
+            </a>
+
+            <a href="painel.html" class="btn-voltar">
+                Voltar ao painel
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="titulo-pagina">
+
+            <h1>Cadastro de Bairros</h1>
+
+            <p>
+                Cadastre e gerencie os bairros utilizados no sistema.
+            </p>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Novo bairro</h2>
+
+            <form id="form-bairro">
+
+                <div class="campo">
+
+                    <label for="nome">Nome do bairro</label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite o nome do bairro"
+                        required
+                    >
+
+                </div>
+
+                <button type="submit" class="btn-cadastrar">
+                    Cadastrar bairro
+                </button>
+
+            </form>
+
+            <p id="mensagem"></p>
+
+        </section>
+
+
+        <section class="card">
+
+            <div class="titulo-lista">
+
+                <div>
+
+                    <h2>Bairros cadastrados</h2>
+
+                    <p>
+                        Lista de bairros registrados no sistema.
+                    </p>
+
+                </div>
+
+                <span id="total-bairros">0 bairros</span>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome do bairro</th>
+                            <th>Ações</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="lista-bairros">
+
+                        <tr>
+                            <td colspan="3">Carregando bairros...</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../JS/bairro.js"></script>
+
+</body>
+
+</html>

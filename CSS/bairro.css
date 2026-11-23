@@ -1,0 +1,256 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --azul-escuro: #123B65;
+    --azul: #1976B9;
+    --azul-claro: #EAF3FA;
+    --fundo: #F3F6FA;
+    --branco: #FFFFFF;
+    --texto: #243447;
+    --texto-secundario: #718096;
+    --borda: #DFE6ED;
+    --verde: #239B72;
+    --vermelho: #DC5555;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho-conteudo {
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--azul-escuro);
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--azul);
+}
+
+.btn-voltar {
+    padding: 10px 17px;
+    background: var(--branco);
+    color: var(--azul-escuro);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn-voltar:hover {
+    background: var(--azul-claro);
+    border-color: var(--azul);
+    color: var(--azul);
+}
+
+/* CONTEÚDO */
+
+.container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 45px 25px;
+    flex: 1;
+}
+
+.titulo-pagina {
+    margin-bottom: 30px;
+}
+
+.titulo-pagina h1 {
+    margin-bottom: 8px;
+    color: var(--azul-escuro);
+    font-size: 30px;
+}
+
+.titulo-pagina p {
+    color: var(--texto-secundario);
+    font-size: 15px;
+}
+
+/* CARTÕES */
+
+.card {
+    padding: 28px;
+    margin-bottom: 25px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(18, 59, 101, 0.05);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: var(--azul-escuro);
+    font-size: 20px;
+}
+
+/* FORMULÁRIO */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.campo input {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 13px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    color: var(--texto);
+}
+
+.campo input:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(25, 118, 185, 0.10);
+}
+
+/* BOTÃO CADASTRAR */
+
+.btn-cadastrar {
+    padding: 13px 22px;
+    background: var(--azul-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-cadastrar:hover {
+    background: var(--azul);
+}
+
+/* MENSAGENS */
+
+#mensagem {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mensagem-sucesso {
+    color: var(--verde);
+}
+
+.mensagem-erro {
+    color: var(--vermelho);
+}
+
+/* LISTAGEM */
+
+.titulo-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.titulo-lista h2 {
+    margin-bottom: 5px;
+}
+
+.titulo-lista p {
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+#total-bairros {
+    padding: 8px 12px;
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* TABELA */
+
+.tabela-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--borda);
+}
+
+th {
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+    font-size: 13px;
+}
+
+td {
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #F8FAFC;
+}
+
+/* BOTÃO EXCLUIR */
+
+.btn-excluir {
+    padding: 8px 13px;
+    background: #FDECEC;
+    color: var(--vermelho);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-excluir:hover {
+    background: #F8D6D6;
+}

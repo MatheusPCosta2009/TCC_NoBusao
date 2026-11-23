@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro de Linhas | NoBusão</title>
+
+    <link rel="stylesheet" href="../CSS/linha.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-admin">
+
+        <div class="logo">
+            <h1>NoBusão</h1>
+        </div>
+
+        <a href="painel.html" class="botao-voltar">
+            Voltar ao painel
+        </a>
+
+    </header>
+
+    <main class="conteudo-admin">
+
+        <div class="titulo-pagina">
+
+            <span class="subtitulo">ADMINISTRAÇÃO</span>
+
+            <h2>Cadastro de Linhas</h2>
+
+            <p>Cadastre as linhas, seus pontos e horários de passagem.</p>
+
+        </div>
+
+        <form id="form-linha" data-api="../PHP/linha.php">
+
+            <section class="card-cadastro">
+
+                <h3>Informações da linha</h3>
+
+                <div class="campo">
+
+                    <label for="numero">Número da linha</label>
+
+                    <input
+                        type="number"
+                        id="numero"
+                        name="numero"
+                        min="1"
+                        max="2147483647"
+                        placeholder="Ex.: 101"
+                        required>
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="cor">Cor da linha</label>
+
+                    <input
+                        type="text"
+                        id="cor"
+                        name="cor"
+                        maxlength="20"
+                        placeholder="Ex.: Azul"
+                        required>
+
+                </div>
+
+            </section>
+
+            <section class="card-cadastro secao-sentido">
+
+                <h3>Pontos de ida</h3>
+
+                <p class="descricao">
+                    Adicione os pontos na ordem em que o ônibus passa.
+                </p>
+
+                <div id="lista-ida"></div>
+
+                <button type="button" class="botao-adicionar" id="adicionar-ida">
+                    + Adicionar ponto de ida
+                </button>
+
+            </section>
+
+            <section class="card-cadastro secao-sentido">
+
+                <h3>Pontos de volta</h3>
+
+                <p class="descricao">
+                    Adicione os pontos na ordem em que o ônibus passa.
+                </p>
+
+                <div id="lista-volta"></div>
+
+                <button type="button" class="botao-adicionar" id="adicionar-volta">
+                    + Adicionar ponto de volta
+                </button>
+
+            </section>
+
+            <button type="submit" id="btn-cadastrar" class="botao-cadastrar">
+                Cadastrar linha
+            </button>
+
+            <p id="mensagem"></p>
+
+        </form>
+
+        <section class="card-lista">
+
+            <div class="titulo-lista">
+                <h3>Linhas cadastradas</h3>
+            </div>
+
+            <p class="contador" id="contador">0 linhas</p>
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Cor</th>
+                            <th>Pontos</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabela-linhas">
+
+                        <tr>
+                            <td colspan="4">Carregando linhas...</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape-admin">
+        NoBusão - Sistema de consulta de linhas e pontos de ônibus
+    </footer>
+
+    <script src="../JS/linha.js"></script>
+
+</body>
+</html>

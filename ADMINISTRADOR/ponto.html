@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciar Pontos | NoBusão</title>
+
+    <link rel="stylesheet" href="../CSS/ponto.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-admin">
+
+        <div class="logo">
+            <h1>NoBusão</h1>
+        </div>
+
+        <a href="painel.html" class="botao-voltar">Voltar</a>
+
+    </header>
+
+
+    <main class="conteudo-admin">
+
+        <section class="titulo-pagina">
+
+            <span class="subtitulo">ÁREA ADMINISTRATIVA</span>
+
+            <h2>Gerenciar pontos</h2>
+
+            <p>
+                Cadastre e consulte os pontos de ônibus disponíveis no sistema.
+            </p>
+
+        </section>
+
+
+        <section class="card-cadastro">
+
+            <h3>Cadastrar novo ponto</h3>
+
+            <form id="form-ponto">
+
+                <div class="campo">
+
+                    <label for="nome">Nome do ponto</label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite o nome do ponto"
+                        maxlength="150"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="bairro">Bairro</label>
+
+                    <select id="bairro" name="id_bairro" required>
+
+                        <option value="">Carregando bairros...</option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="btn-cadastrar"
+                    class="botao-cadastrar"
+                >
+                    Cadastrar ponto
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="card-lista">
+
+            <div class="titulo-lista">
+
+                <h3>Pontos cadastrados</h3>
+
+                <span class="contador" id="contador">
+                    0 pontos
+                </span>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome do ponto</th>
+                            <th>Bairro</th>
+                            <th>Ação</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="lista-pontos">
+
+                        <tr>
+                            <td colspan="4">Carregando pontos...</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape-admin">
+
+        <p>NoBusão — Sistema de consulta de transporte público.</p>
+
+    </footer>
+
+
+    <script src="../JS/ponto.js"></script>
+
+</body>
+</html>

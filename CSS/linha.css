@@ -1,0 +1,442 @@
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #F3F6FA;
+    color: #243447;
+}
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.cabecalho-admin {
+    background-color: #FFFFFF;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-letra {
+    background-color: #123B65;
+    color: #FFFFFF;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo h1 {
+    color: #123B65;
+    font-size: 24px;
+}
+
+.botao-voltar {
+    text-decoration: none;
+    color: #123B65;
+    font-weight: 600;
+    border: 1px solid #DFE6ED;
+    padding: 9px 18px;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.botao-voltar:hover {
+    background-color: #EAF3FA;
+}
+
+/* ==========================================
+   CONTEÚDO
+========================================== */
+
+.conteudo-admin {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.titulo-pagina {
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    color: #1976B9;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.titulo-pagina h2 {
+    color: #123B65;
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.titulo-pagina p {
+    color: #718096;
+    font-size: 15px;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.card-cadastro,
+.card-lista {
+    background-color: #FFFFFF;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #DFE6ED;
+    margin-bottom: 25px;
+}
+
+.card-cadastro h3,
+.card-lista h3 {
+    color: #123B65;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   CAMPOS
+========================================== */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.campo label,
+.campo-ponto label,
+.campo-horario label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo-ponto select,
+.horario-item input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #DFE6ED;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: #FFFFFF;
+    color: #243447;
+    outline: none;
+}
+
+.campo input:focus,
+.campo-ponto select:focus,
+.horario-item input:focus {
+    border-color: #1976B9;
+}
+
+/* ==========================================
+   SEÇÕES DE IDA E VOLTA
+========================================== */
+
+.secao-sentido {
+    margin-bottom: 25px;
+}
+
+.descricao {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+/* ==========================================
+   PONTOS
+========================================== */
+
+.ponto-item {
+    background-color: #F8FAFC;
+    border: 1px solid #DFE6ED;
+    border-radius: 9px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.numero-ponto {
+    color: #123B65;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.campo-ponto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+/* ==========================================
+   HORÁRIOS
+========================================== */
+
+.campo-horario {
+    margin-bottom: 15px;
+}
+
+.campo-horario label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.lista-horarios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.horario-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.horario-item input {
+    width: 180px;
+    max-width: 100%;
+    padding: 11px;
+    font-size: 14px;
+}
+
+.acoes-ponto {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+.botao-adicionar,
+.botao-horario {
+    background-color: #EAF3FA;
+    color: #1976B9;
+    border: 1px solid #D3E5F2;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-adicionar:hover,
+.botao-horario:hover {
+    background-color: #D9EAF6;
+}
+
+.botao-excluir {
+    background-color: #FFF0F0;
+    color: #DC5555;
+    border: 1px solid #F3D0D0;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-excluir:hover {
+    background-color: #DC5555;
+    color: #FFFFFF;
+}
+
+.botao-excluir:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   CADASTRAR
+========================================== */
+
+.botao-cadastrar {
+    width: 100%;
+    background-color: #123B65;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-cadastrar:hover {
+    background-color: #1976B9;
+}
+
+.botao-cadastrar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   MENSAGENS
+========================================== */
+
+#mensagem {
+    margin: 15px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mensagem-sucesso {
+    color: #238636;
+}
+
+.mensagem-erro {
+    color: #DC5555;
+}
+
+/* ==========================================
+   LISTA E TABELA
+========================================== */
+
+.titulo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.contador {
+    display: inline-block;
+    background-color: #EAF3FA;
+    color: #1976B9;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background-color: #EAF3FA;
+}
+
+th {
+    color: #123B65;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+th,
+td {
+    padding: 16px;
+    border-bottom: 1px solid #DFE6ED;
+}
+
+td {
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+.rodape-admin {
+    text-align: center;
+    padding: 25px 15px;
+    color: #718096;
+    font-size: 13px;
+    margin-top: 50px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .cabecalho-admin {
+        padding: 15px 5%;
+    }
+
+    .conteudo-admin {
+        margin: 30px auto;
+    }
+
+    .titulo-pagina h2 {
+        font-size: 25px;
+    }
+
+    .card-cadastro,
+    .card-lista {
+        padding: 18px;
+    }
+
+    .ponto-item {
+        padding: 15px;
+    }
+
+    .horario-item {
+        flex-wrap: wrap;
+    }
+
+    .horario-item input {
+        width: 100%;
+    }
+
+    .acoes-ponto {
+        align-items: stretch;
+    }
+
+    th,
+    td {
+        padding: 12px 9px;
+    }
+
+    .botao-excluir {
+        padding: 7px 10px;
+    }
+}

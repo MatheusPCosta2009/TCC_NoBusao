@@ -1,0 +1,284 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --azul-escuro: #123B65;
+    --azul: #1976B9;
+    --azul-claro: #EAF3FA;
+    --fundo: #F3F6FA;
+    --branco: #FFFFFF;
+    --texto: #243447;
+    --texto-secundario: #718096;
+    --borda: #DFE6ED;
+    --vermelho: #DC5555;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+/* CABEÇALHO */
+
+.cabecalho-admin {
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-letra {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--azul-escuro);
+    color: var(--branco);
+    border-radius: 8px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo h1 {
+    color: var(--azul-escuro);
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.botao-voltar {
+    padding: 10px 17px;
+    background: var(--branco);
+    color: var(--azul-escuro);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.botao-voltar:hover {
+    background: var(--azul-claro);
+    border-color: var(--azul);
+    color: var(--azul);
+}
+
+/* CONTEÚDO */
+
+.conteudo-admin {
+    width: 100%;
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 25px;
+    flex: 1;
+}
+
+.titulo-pagina {
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.titulo-pagina h2 {
+    margin: 8px 0;
+    color: var(--azul-escuro);
+    font-size: 30px;
+}
+
+.titulo-pagina p {
+    color: var(--texto-secundario);
+    font-size: 15px;
+}
+
+/* CARTÕES */
+
+.card-cadastro,
+.card-lista {
+    padding: 28px;
+    margin-bottom: 25px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(18, 59, 101, 0.05);
+}
+
+.card-cadastro h3,
+.card-lista h3 {
+    margin-bottom: 20px;
+    color: var(--azul-escuro);
+    font-size: 20px;
+}
+
+/* FORMULÁRIO */
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 13px;
+    background: var(--branco);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(25, 118, 185, 0.10);
+}
+
+/* BOTÃO CADASTRAR */
+
+.botao-cadastrar {
+    padding: 13px 22px;
+    background: var(--azul-escuro);
+    color: var(--branco);
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-cadastrar:hover {
+    background: var(--azul);
+}
+
+.botao-cadastrar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* LISTAGEM */
+
+.titulo-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.titulo-lista h3 {
+    margin-bottom: 0;
+}
+
+.contador {
+    padding: 8px 12px;
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* TABELA */
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead {
+    background: var(--azul-claro);
+}
+
+th,
+td {
+    padding: 15px;
+    border-bottom: 1px solid var(--borda);
+}
+
+th {
+    color: var(--azul-escuro);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+td {
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #F8FAFC;
+}
+
+/* BOTÃO EXCLUIR */
+
+.botao-excluir {
+    padding: 8px 13px;
+    background: #FDECEC;
+    color: var(--vermelho);
+    border: 1px solid #F3D0D0;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-excluir:hover {
+    background: var(--vermelho);
+    color: var(--branco);
+}
+
+.botao-excluir:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* RODAPÉ */
+
+.rodape-admin {
+    margin-top: auto;
+    padding: 25px 15px;
+    color: var(--texto-secundario);
+    font-size: 13px;
+    text-align: center;
+}

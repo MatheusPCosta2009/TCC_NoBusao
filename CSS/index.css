@@ -1,0 +1,585 @@
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E VARIÁVEIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --azul-escuro: #123B65;
+    --azul: #1976B9;
+    --azul-claro: #EAF3FA;
+
+    --fundo: #F3F6FA;
+    --branco: #FFFFFF;
+
+    --texto: #243447;
+    --texto-secundario: #718096;
+
+    --borda: #DFE6ED;
+
+    --verde: #239B72;
+    --vermelho: #DC5555;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.cabecalho {
+    width: 100%;
+
+    background: var(--branco);
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho-conteudo {
+    max-width: 1150px;
+
+    margin: auto;
+    padding: 18px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* LOGO */
+
+.logo {
+    color: var(--azul-escuro);
+
+    font-size: 25px;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+.logo-destaque {
+    color: var(--azul);
+}
+
+
+/* BOTÃO ÁREA ADMINISTRATIVA */
+
+.botao-adm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 10px 17px;
+
+    background: var(--branco);
+    color: var(--azul-escuro);
+
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-adm:hover {
+    background: var(--azul-claro);
+
+    border-color: var(--azul);
+    color: var(--azul);
+
+    transform: translateY(-1px);
+}
+
+.botao-adm:focus-visible {
+    outline: 3px solid rgba(25, 118, 185, 0.25);
+    outline-offset: 3px;
+}
+
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL
+========================================== */
+
+.container {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 0 auto;
+    padding: 65px 25px 50px;
+
+    flex: 1;
+}
+
+
+/* ==========================================
+   APRESENTAÇÃO
+========================================== */
+
+.apresentacao {
+    margin-bottom: 35px;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: var(--azul);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.apresentacao h1 {
+    max-width: 650px;
+
+    margin-bottom: 15px;
+
+    color: var(--azul-escuro);
+
+    font-size: 43px;
+    font-weight: 750;
+
+    line-height: 1.2;
+}
+
+.apresentacao h1 span {
+    color: var(--azul);
+}
+
+.apresentacao p {
+    max-width: 570px;
+
+    color: var(--texto-secundario);
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   CARTÃO DE BUSCA
+========================================== */
+
+.cartao-busca {
+    padding: 32px;
+
+    background: var(--branco);
+
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(18, 59, 101, 0.05);
+}
+
+.cartao-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.cartao-cabecalho h2 {
+    margin-bottom: 6px;
+
+    color: var(--azul-escuro);
+
+    font-size: 21px;
+}
+
+.cartao-cabecalho p {
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   ÁREAS DE ORIGEM E DESTINO
+========================================== */
+
+.rota {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+.bloco-rota {
+    padding: 23px;
+
+    background: #FCFDFE;
+
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+}
+
+.titulo-rota {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 22px;
+}
+
+.titulo-rota h3 {
+    color: var(--azul-escuro);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* MARCADORES */
+
+.marcador {
+    width: 11px;
+    height: 11px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.origem {
+    background: var(--verde);
+}
+
+.destino {
+    background: var(--vermelho);
+}
+
+
+/* ==========================================
+   CAMPOS DO FORMULÁRIO
+========================================== */
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+.grupo:last-child {
+    margin-bottom: 0;
+}
+
+.grupo label {
+    color: var(--texto);
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.grupo select {
+    width: 100%;
+    min-height: 46px;
+
+    padding: 0 13px;
+
+    background: var(--branco);
+    color: var(--texto);
+
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.grupo select:focus {
+    border-color: var(--azul);
+
+    box-shadow: 0 0 0 3px rgba(25, 118, 185, 0.10);
+}
+
+.grupo select:disabled {
+    background: #F1F3F5;
+
+    color: var(--texto-secundario);
+
+    cursor: not-allowed;
+}
+
+
+/* ==========================================
+   BOTÃO ENCONTRAR ROTA
+========================================== */
+
+.botao-rota {
+    width: 100%;
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 12px 20px;
+
+    background: var(--azul-escuro);
+    color: var(--branco);
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.botao-rota:hover {
+    background: var(--azul);
+
+    transform: translateY(-1px);
+}
+
+.botao-rota span {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.botao-rota:focus-visible {
+    outline: 3px solid rgba(25, 118, 185, 0.25);
+    outline-offset: 3px;
+}
+
+
+/* ==========================================
+   AVISO
+========================================== */
+
+.aviso {
+    margin-top: 18px;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   INFORMAÇÕES
+========================================== */
+
+.informacoes {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.informacao {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 13px;
+}
+
+.informacao-numero {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--azul-claro);
+    color: var(--azul);
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.informacao h3 {
+    margin-bottom: 7px;
+
+    color: var(--azul-escuro);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.informacao p {
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+.rodape {
+    width: 100%;
+
+    padding: 24px 20px;
+
+    background: var(--branco);
+
+    border-top: 1px solid var(--borda);
+
+    text-align: center;
+}
+
+.rodape p {
+    color: var(--azul-escuro);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.rodape span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--texto-secundario);
+
+    font-size: 11px;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - TABLETS
+========================================== */
+
+@media (max-width: 750px) {
+
+    .container {
+        padding: 45px 20px;
+    }
+
+    .apresentacao h1 {
+        font-size: 36px;
+    }
+
+    .rota {
+        grid-template-columns: 1fr;
+    }
+
+    .informacoes {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .cartao-busca {
+        padding: 25px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - CELULARES
+========================================== */
+
+@media (max-width: 480px) {
+
+    .cabecalho-conteudo {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .botao-adm {
+        min-height: 38px;
+
+        padding: 8px 12px;
+
+        font-size: 11px;
+    }
+
+    .container {
+        padding: 35px 15px;
+    }
+
+    .apresentacao h1 {
+        font-size: 30px;
+    }
+
+    .apresentacao p {
+        font-size: 14px;
+    }
+
+    .cartao-busca {
+        padding: 19px;
+    }
+
+    .cartao-cabecalho h2 {
+        font-size: 19px;
+    }
+
+    .bloco-rota {
+        padding: 18px;
+    }
+
+    .botao-rota {
+        font-size: 14px;
+    }
+
+}

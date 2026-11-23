@@ -1,0 +1,216 @@
+
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #F3F6FA;
+    color: #243447;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CABEÇALHO */
+.cabecalho-admin {
+    background-color: #FFFFFF;
+    padding: 18px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-letra {
+    background-color: #123B65;
+    color: #FFFFFF;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo h1 {
+    color: #123B65;
+    font-size: 24px;
+}
+
+/* BOTÃO SAIR */
+.botao-sair {
+    text-decoration: none;
+    color: #DC5555;
+    font-weight: 600;
+    border: 1px solid #F3D0D0;
+    padding: 9px 18px;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.botao-sair:hover {
+    background-color: #FFF0F0;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo-admin {
+    max-width: 1000px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* TÍTULO */
+.titulo-pagina {
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    color: #1976B9;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.titulo-pagina h2 {
+    color: #123B65;
+    font-size: 30px;
+    margin: 8px 0;
+}
+
+.titulo-pagina p {
+    color: #718096;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* OPÇÕES DE CADASTRO */
+.opcoes-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* CARTÕES */
+.botao-cadastro {
+    background-color: #FFFFFF;
+    border: 1px solid #DFE6ED;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    color: #243447;
+    transition: 0.2s;
+}
+
+.botao-cadastro:hover {
+    border-color: #1976B9;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(18, 59, 101, 0.08);
+    transform: translateY(-2px);
+}
+
+/* ÍCONE DO CARTÃO */
+.icone-cadastro {
+    background-color: #EAF3FA;
+    color: #1976B9;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* INFORMAÇÕES DO CARTÃO */
+.informacoes-cadastro {
+    flex: 1;
+}
+
+.informacoes-cadastro h3 {
+    color: #123B65;
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.informacoes-cadastro p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* SETA */
+.seta {
+    color: #1976B9;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.botao-cadastro:hover .seta {
+    transform: translateX(5px);
+}
+
+/* RODAPÉ */
+.rodape-admin {
+    text-align: center;
+    padding: 25px 15px;
+    color: #718096;
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+
+    .cabecalho-admin {
+        padding: 15px 5%;
+    }
+
+    .conteudo-admin {
+        margin: 30px auto;
+    }
+
+    .titulo-pagina h2 {
+        font-size: 25px;
+    }
+
+    .botao-cadastro {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .icone-cadastro {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        font-size: 19px;
+    }
+
+    .informacoes-cadastro h3 {
+        font-size: 15px;
+    }
+
+    .informacoes-cadastro p {
+        font-size: 13px;
+    }
+
+}

@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NoBusão | Planeje sua viagem</title>
+
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="cabecalho-conteudo">
+
+            <a href="index.html" class="logo">
+                <span>No<span class="logo-destaque">Busão</span></span>
+            </a>
+
+            <a href="ADMINISTRADOR/login.html" class="botao-adm">
+                Área administrativa
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="apresentacao">
+
+            <span class="etiqueta">MOBILIDADE URBANA</span>
+
+            <h1>
+                Conectando você ao seu
+                <span>destino.</span>
+            </h1>
+
+            <p>
+                Encontre linhas de ônibus, consulte horários
+                da cidade de Birigui.
+            </p>
+
+        </section>
+
+
+        <section class="cartao-busca">
+
+            <div class="cartao-cabecalho">
+
+                <div>
+
+                    <h2>Dados da viagem</h2>
+
+                    <p>
+                        Informe os pontos de partida e chegada.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form action="PHP/rota.php" method="GET" id="form-rota">
+
+                <div class="rota">
+
+                    <div class="bloco-rota">
+
+                        <div class="titulo-rota">
+
+                            <span class="marcador origem"></span>
+
+                            <h3>Local de partida</h3>
+
+                        </div>
+
+
+                        <div class="grupo">
+
+                            <label for="bairro_origem">
+                                Bairro de origem
+                            </label>
+
+                            <select name="bairro_origem" id="bairro_origem" required>
+                                <option value="">Carregando bairros...</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="grupo">
+
+                            <label for="ponto_origem">
+                                Ponto de partida
+                            </label>
+
+                            <select name="ponto_origem" id="ponto_origem" required disabled>
+                                <option value="">Selecione primeiro o bairro</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bloco-rota">
+
+                        <div class="titulo-rota">
+
+                            <span class="marcador destino"></span>
+
+                            <h3>Local de chegada</h3>
+
+                        </div>
+
+
+                        <div class="grupo">
+
+                            <label for="bairro_destino">
+                                Bairro de destino
+                            </label>
+
+                            <select name="bairro_destino" id="bairro_destino" required>
+                                <option value="">Carregando bairros...</option>
+                            </select>
+
+                        </div>
+
+
+                        <div class="grupo">
+
+                            <label for="ponto_destino">
+                                Ponto de chegada
+                            </label>
+
+                            <select name="ponto_destino" id="ponto_destino" required disabled>
+                                <option value="">Selecione primeiro o bairro</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="botao-rota">
+
+                    Encontrar minha rota
+
+                    <span>→</span>
+
+                </button>
+
+            </form>
+
+
+            <p class="aviso">
+                Selecione os pontos de partida e chegada
+                para consultar as opções de transporte.
+            </p>
+
+        </section>
+
+
+        <section class="informacoes">
+
+            <div class="informacao">
+
+                <span class="informacao-numero">01</span>
+
+                <div>
+
+                    <h3>Escolha seu percurso</h3>
+
+                    <p>
+                        Informe onde você está e para onde deseja ir.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="informacao">
+
+                <span class="informacao-numero">02</span>
+
+                <div>
+
+                    <h3>Consulte as linhas</h3>
+
+                    <p>
+                        Encontre as opções de ônibus disponíveis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="informacao">
+
+                <span class="informacao-numero">03</span>
+
+                <div>
+
+                    <h3>Chegue ao destino</h3>
+
+                    <p>
+                        Consulte horários e planeje seu deslocamento.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <p>NoBusão</p>
+
+        <span>
+            Mobilidade urbana e informação.
+        </span>
+
+    </footer>
+
+
+    <script src="JS/index.js"></script>
+
+</body>
+
+</html>

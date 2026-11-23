@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login Administrativo | NoBusão</title>
+
+    <link rel="stylesheet" href="../CSS/login.css">
+    <script src="../JS/login.js" defer></script>
+</head>
+
+<body>
+
+    <a href="../index.html" class="botao-voltar">
+        Voltar ao início
+    </a>
+
+    <main class="container-login">
+
+        <section class="card-login">
+
+            <div class="logo">
+                <span class="logo-letra">N</span>
+                <h1>NoBusão</h1>
+            </div>
+
+            <h2>Área do Administrador</h2>
+
+            <form id="form-login">
+
+                <div class="campo">
+                    <label for="login">Login</label>
+
+                    <input
+                        type="text"
+                        id="login"
+                        name="login"
+                        placeholder="Digite seu login"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        required>
+                </div>
+
+                <button type="submit" id="botao-entrar">
+                    Entrar
+                </button>
+
+                <p id="mensagem"></p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
